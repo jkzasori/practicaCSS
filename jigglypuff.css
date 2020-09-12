@@ -1,0 +1,403 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+:root {
+    --shadow-inside: rgb(173, 123, 133);
+    --colorCabello: pink;
+    --colorBorderCabello: #e4a8b3;
+    --colorOrejas: pink;
+    --colorBorderOrejas: #e4a8b3;
+    --colorBrazos: pink;
+    --colorBorderBrazos: #e4a8b3;
+    --colorPiernas: pink;
+    --colorBorderPiernas: #e4a8b3;
+    --colorCabeza: pink;
+    --colorBody: pink;
+    --colorBorderCabeza: #e4a8b3;
+    --colorBody: pink;
+}
+body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 5s ;animation: movimientoFondo 5s linear infinite;
+}
+.caja {
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid white;
+    align-items: center;
+    margin: 5px;
+    box-shadow: 2px 5px 9px 0 #000;
+}
+.jigglypuff {
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+/***************************************
+***************************************
+***************************************
+***************************************
+ANIMACIÖN FINAL
+***************************************
+***************************************
+*/
+.caja:hover .jigglypuff {
+    animation: subeybaja 1s linear forwards;
+    cursor: pointer;
+}
+.caja:hover .jigglypuff .cabeza .ojos .izquierdo,
+.caja:hover .jigglypuff .cabeza .ojos .derecho {
+    border-bottom: 2px solid #919191;
+    border-top: 1px solid #919191;
+}
+
+.caja:hover .jigglypuff .cabeza .ojos .izquierdo:before,
+.caja:hover .jigglypuff .cabeza .ojos .izquierdo:after  {
+    transform: rotate(28deg);
+    width: 130%;
+    transition: transform 0.5s, width .2s;
+}
+
+.caja:hover .jigglypuff .cabeza .ojos .derecho:before,
+.caja:hover .jigglypuff .cabeza .ojos .derecho:after {
+    transform: rotate(-28deg);
+    width: 130%;
+    transition: transform 0.5s, width .2s;
+}
+.caja:hover .jigglypuff .cabeza .boca {
+    height: 12px;
+    background-color: transparent;
+    transition: height 1s, background 2s;
+}
+/*******************************
+OREJAS
+*******************************/
+
+.jigglypuff .orejas {
+    width: calc(100% - 80px);
+    height: 55px;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.jigglypuff .orejas .izquierda, 
+.jigglypuff .orejas .derecha,
+.jigglypuff .orejas .izquierda:before, 
+.jigglypuff .orejas .derecha:before,
+.jigglypuff .orejas .izquierda:after, 
+.jigglypuff .orejas .derecha:after {
+    width: 60px;
+    height: 60px;
+    background-color: var(--colorOrejas);
+    border-radius: 5px;
+    position: absolute;
+}
+.jigglypuff .orejas .izquierda {
+    transform: rotate(35deg) skew(15deg, 15deg);
+    left: -20px;
+    top: 10px;
+}
+.jigglypuff .orejas .derecha {
+    left: calc(100% - 80px);
+    transform: rotate(102deg) skew(15deg, 15deg);
+    top: -7px;
+}
+.jigglypuff .orejas .izquierda, 
+.jigglypuff .orejas .derecha {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 60px;
+}
+
+.jigglypuff .orejas .izquierda:before, 
+.jigglypuff .orejas .derecha:before {
+    content: '';
+    top: -44px;
+    left: 20px;
+    transform: rotate(-65deg) skew(15deg, 15deg);
+    border-top-right-radius: 60px;
+}
+
+.jigglypuff .orejas .izquierda:after, 
+.jigglypuff .orejas .derecha:after {
+    content: '';
+    background-color: #675b5b;
+    top: -15px;
+    left: 25px;
+    transform: rotate(66deg);
+    box-shadow: -1px 1px 5px 2px var(--colorBorderOrejas);
+}
+
+/*******************************
+CABELLO
+*******************************/
+
+.jigglypuff .cabello,
+.jigglypuff .cabello::after,
+.jigglypuff .cabello::before {
+    background-color: var(--colorCabello);
+    border: 1px solid var(--colorBorderCabello);
+    box-shadow: inset -5px -2px 4px 1px var(--shadow-inside);
+}
+.jigglypuff .cabello {
+    position: absolute;
+    top: 6.2%;
+    width: 30%;
+    height: 35%;
+    left: calc(50% - 54px);
+    border-top-left-radius: 42px;
+    border-top-right-radius: 33px;
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 20px;
+    transform: rotate(36deg);
+    z-index: 7;
+}
+.jigglypuff .cabello::after {
+    content: '';
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    left: 62%;
+    top: 39.5%;
+    border-top-right-radius: 58%;
+    border-bottom-right-radius: 97%;
+    border-top-left-radius: 80%;
+    border-left: none
+}
+
+
+/*******************************
+CABEZA
+*******************************/
+
+.jigglypuff .cabeza {
+    width: 83%;
+    height: 80%;
+    position: absolute;
+    top: 40px;
+    left: 8.5%;
+    border-radius: 50%;
+    box-shadow: inset 2px -15px 14px 0px var(--shadow-inside), 
+                inset 0px -20px 20px 20px rgb(255 194 204), 
+                1px 3px 9px 0px #202020;
+    z-index: 6;
+}
+/*OJOS*/
+.jigglypuff .cabeza .ojos {
+    width: 100%;
+    height: 20%;
+    top: 30%;
+    position: relative;
+}
+.jigglypuff .cabeza .ojos .izquierdo, 
+.jigglypuff .cabeza .ojos .derecho{
+    width: 60px;
+    height: 62px;
+    top: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+}
+.jigglypuff .cabeza .ojos .izquierdo {
+    left: 16%;
+    box-shadow: inset 4px -2px 0px 5px #ffffff, 
+                inset 10px -7px 6px 10px #357f9e, 
+                inset 13px -10px 4px 20px #184558;
+}
+
+.jigglypuff .cabeza .ojos .derecho {
+    left: 59%;
+    box-shadow: inset -4px -2px 0px 5px #ffffff, 
+                inset -4px -4px 6px 10px #357f9e, 
+                inset -13px -7px 4px 20px #184558;
+}
+.jigglypuff .cabeza .ojos .izquierdo:after,
+.jigglypuff .cabeza .ojos .derecho:after {
+    content: '';
+    width: 0;
+    height: 44%;
+    background-color: pink;
+    position: absolute;
+    top: 86%;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top: 1px solid gray;
+}
+.jigglypuff .cabeza .ojos .izquierdo:before,
+.jigglypuff .cabeza .ojos .derecho:before {
+    content: '';
+    width: 0%;
+    height: 64%;
+    background-color: pink;
+    position: absolute;
+    border-bottom-right-radius: 38%;
+    border-bottom-left-radius: 38%;
+    border-bottom: 1px solid gray;
+    top: -33%;
+   
+}
+.jigglypuff .cabeza .ojos .izquierdo:before {
+    transform: rotate(12deg);
+    transform: translateY(-16px);
+    
+}
+.jigglypuff .cabeza .ojos .izquierdo:after {
+    transform: translateY(16px);
+    left: -15px;
+}
+.jigglypuff .cabeza .ojos .derecho:before {
+    transform: translateY(-16px);   
+    left: -14px;
+}
+.jigglypuff .cabeza .ojos .derecho:after {
+    transform: translateY(16px);
+    left: -1px;
+}
+.jigglypuff .cabeza .boca{
+    width: 30px;
+    /*height: 12px;*/
+    height: 40px;
+    /*background-color: transparent;*/
+    background-color: rgba(224, 48, 53, 0.3);
+    top: 60%;
+    left: calc(50% - 15px);
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: inset 0px -3px 0px 0px #717171;
+}
+
+/*******************************
+CUERPO
+*******************************/
+
+.jigglypuff .body {
+    height: 80%;
+    width: 83%;
+    position: absolute;
+    top: 40px;
+    left: 8.5%;
+    border-radius: 50%;
+    background-color: var(--colorBody);
+    z-index: 5;
+}
+
+/*******************************
+Brazos
+*******************************/
+
+.jigglypuff .brazos {
+    width: 85%;
+    height: 60px;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    z-index: 6;
+    left: 7.5%;
+}
+.jigglypuff .brazos .izquierdo,
+.jigglypuff .brazos .derecho {
+    width: 15%;
+    background: var(--colorBrazos);
+    height: 70%;
+    position: absolute;
+    border: 1px solid var(--colorBorderBrazos);
+    border-top-right-radius: 145px;
+    border-bottom-right-radius: 22px;
+    border-bottom-left-radius: 122px;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+.jigglypuff .brazos .izquierdo {
+    top: 40px;
+    transform: rotate(-95deg);
+}
+.jigglypuff .brazos .derecho {
+    top: 40px;
+    left: 86%;
+    transform: rotate(180deg);
+}
+
+/*******************************
+PIERNAS
+*******************************/
+
+.jigglypuff .piernas {
+    position: absolute;
+    width: 85%;
+    height: 60px;
+    top: calc(100% - 40px);
+    left: 7.5%;
+    z-index: 1;
+}
+.jigglypuff .piernas .izquierdo, 
+.jigglypuff .piernas .derecho {
+    background-color: var(--colorPiernas);
+    width: 45px;
+    height: 55px;
+    position: absolute;
+    border: 1px solid var(--colorBorderPiernas);
+    border-top-right-radius: 145px;
+    border-bottom-right-radius: 22px;
+    border-bottom-left-radius: 122px;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+.jigglypuff .piernas .izquierdo{
+    transform: rotate(92deg);
+    left: 50px;
+    top: -8px;
+    box-shadow: -5px -7px 8px 1px #2f2f2f;
+}
+.jigglypuff .piernas .derecho{
+    top: -11px;
+    left: calc(100% - 85px);
+    transform: rotate(4deg);
+    box-shadow: -11px -9px 8px 1px #2f2f2f;
+}
+
+@keyframes movimientoFondo {
+    0% {
+        background: linear-gradient(45deg, red, blue) center /cover no-repeat fixed ;
+
+    }
+    15% {
+        background: linear-gradient(45deg, darkred, darkblue) center/cover no-repeat fixed;
+
+    }
+    
+    30% {
+        background: linear-gradient(45deg, rgb(60, 0, 0), rgb(0, 0, 60)) center/cover no-repeat fixed;
+
+    }
+    45% {
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgb(0, 0, 0)) center/cover no-repeat fixed;
+
+    }
+    60% {
+        background: linear-gradient(45deg, rgb(60, 0, 0), rgb(0, 0, 60)) center/cover no-repeat fixed;
+
+    }
+    75% {
+        background: linear-gradient(45deg, darkred, darkblue) center/cover no-repeat fixed;
+
+    }
+    100% {
+        background: linear-gradient(45deg, red, blue) center/cover no-repeat fixed;
+    }
+}
+@keyframes subeybaja {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
