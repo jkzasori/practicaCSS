@@ -262,15 +262,15 @@ CABEZA
     left: -1px;
 }
 .jigglypuff .cabeza .boca{
-    width: 30px;
-    /*height: 12px;*/
-    height: 40px;
-    /*background-color: transparent;*/
+    width: 26px;
+    height: 26px;
     background-color: rgba(224, 48, 53, 0.3);
     top: 60%;
-    left: calc(50% - 15px);
+    left: calc(50% - 13px);
     position: absolute;
     border-radius: 50%;
+    border-top-right-radius: 15%;
+    border-top-left-radius: 15%;
     box-shadow: inset 0px -3px 0px 0px #717171;
 }
 
