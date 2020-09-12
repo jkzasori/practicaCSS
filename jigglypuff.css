@@ -104,7 +104,7 @@ OREJAS
 .jigglypuff .orejas .izquierda {
     transform: rotate(35deg) skew(15deg, 15deg);
     left: -20px;
-    top: 10px;
+    top: 15px;
 }
 .jigglypuff .orejas .derecha {
     left: calc(100% - 80px);
